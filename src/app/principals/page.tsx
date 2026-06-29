@@ -130,9 +130,9 @@ export default function PrincipalsPage() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-            {principals.map((p) => (
+            {principals.map((p, i) => (
               <div
-                key={p.name}
+                key={`${p.name}-${i}`}
                 className={`bg-white rounded-2xl overflow-hidden shadow-sm border transition-all hover:shadow-lg group ${
                   p.rip ? "border-[#c9a227]/40 hover:border-[#c9a227]" : "border-gray-100 hover:border-[#8b0000]/30"
                 }`}
