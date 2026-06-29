@@ -152,9 +152,6 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-black text-white mb-3">
               Aathallers <span className="text-[#c9a227]">Vlog</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-xl mx-auto">
-              Our 2015 batch friends doing what they do best — entertainment, fun challenges, travel &amp; adventure.
-            </p>
           </div>
 
           {/* Video Grid */}
