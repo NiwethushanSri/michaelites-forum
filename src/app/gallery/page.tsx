@@ -1,22 +1,16 @@
 import { Lock, Upload, Image as ImageIcon, Star, Heart, Users } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const albums = [
-  { title: "School Days 2013–2015", count: 48, icon: GraduationCapIcon, tag: "Memories" },
-  { title: "A/L Study Days", count: 22, icon: BookIcon, tag: "Memories" },
-  { title: "Reunion 2022", count: 120, icon: PartyIcon, tag: "Events" },
-  { title: "Cricket Match 2023", count: 67, icon: TrophyIcon, tag: "Events" },
-  { title: "Donation Drive 2024", count: 34, icon: HeartIcon, tag: "Charity" },
-  { title: "Reunion 2025", count: 95, icon: StarIcon, tag: "Events" },
+  { title: "Reunion 2020 – Class A", count: 1, tag: "Events", cover: "/reunion-2020.jpg" },
+  { title: "School Days 2013–2015", count: 48, tag: "Memories", cover: null },
+  { title: "A/L Study Days", count: 22, tag: "Memories", cover: null },
+  { title: "Reunion 2022", count: 120, tag: "Events", cover: null },
+  { title: "Cricket Match 2023", count: 67, tag: "Events", cover: null },
+  { title: "Donation Drive 2024", count: 34, tag: "Charity", cover: null },
+  { title: "Reunion 2025", count: 95, tag: "Events", cover: null },
 ];
-
-// Simple icon wrapper components using lucide
-function GraduationCapIcon() { return <ImageIcon className="w-10 h-10 text-[#0d1b3e]/40" strokeWidth={1} />; }
-function BookIcon() { return <ImageIcon className="w-10 h-10 text-[#0d1b3e]/40" strokeWidth={1} />; }
-function PartyIcon() { return <Star className="w-10 h-10 text-[#c9a227]/60" strokeWidth={1} />; }
-function TrophyIcon() { return <ImageIcon className="w-10 h-10 text-[#0d1b3e]/40" strokeWidth={1} />; }
-function HeartIcon() { return <Heart className="w-10 h-10 text-[#8b0000]/40" strokeWidth={1} />; }
-function StarIcon() { return <Star className="w-10 h-10 text-[#c9a227]/60" strokeWidth={1} />; }
 
 const tagColors: Record<string, string> = {
   Memories: "bg-blue-100 text-blue-700",
@@ -65,8 +59,19 @@ export default function GalleryPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {albums.map((a) => (
             <div key={a.title} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all cursor-pointer group">
-              <div className="bg-gradient-to-br from-[#0d1b3e]/5 to-[#8b0000]/5 h-44 flex items-center justify-center group-hover:from-[#0d1b3e]/10 group-hover:to-[#8b0000]/10 transition-all">
-                <a.icon />
+              <div className="h-44 overflow-hidden relative">
+                {a.cover ? (
+                  <Image
+                    src={a.cover}
+                    alt={a.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="bg-gradient-to-br from-[#0d1b3e]/5 to-[#8b0000]/5 h-full flex items-center justify-center group-hover:from-[#0d1b3e]/10 group-hover:to-[#8b0000]/10 transition-all">
+                    <ImageIcon className="w-10 h-10 text-[#0d1b3e]/40" strokeWidth={1} />
+                  </div>
+                )}
               </div>
               <div className="p-5">
                 <div className="flex items-start justify-between gap-2">
