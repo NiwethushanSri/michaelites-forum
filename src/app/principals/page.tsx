@@ -144,12 +144,9 @@ export default function PrincipalsPage() {
                   >
                     <td className="px-5 py-4 text-gray-400 font-medium">{i + 1}</td>
                     <td className="px-5 py-4">
-                      <div className="flex items-center gap-2">
-                        {p.rip && <span className="text-base">🕯️</span>}
-                        <span className={`font-bold ${p.rip ? "text-gray-600" : "text-[#0d1b3e]"}`}>
-                          {p.name}
-                        </span>
-                      </div>
+                      <span className={`font-bold ${p.rip ? "text-gray-600" : "text-[#0d1b3e]"}`}>
+                        {p.name}
+                      </span>
                     </td>
                     <td className="px-5 py-4">
                       <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${
