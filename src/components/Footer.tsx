@@ -70,7 +70,10 @@ export default function Footer() {
             <a href="https://niwethushan.com" target="_blank" rel="noopener noreferrer" className="text-[#c9a227] font-semibold hover:text-yellow-400 transition-colors">
               Niwethushan
             </a>{" "}
-            · <span className="text-gray-400">Forge9x</span>
+            ·{" "}
+            <a href="https://forge9x.co.uk" target="_blank" rel="noopener noreferrer" className="text-[#c9a227] font-semibold hover:text-yellow-400 transition-colors">
+              Forge9x
+            </a>
           </p>
           <div className="flex gap-4 text-xs text-gray-500">
             <a href="#" className="hover:text-gray-300">Privacy Policy</a>
