@@ -146,7 +146,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-black text-[#0d1b3e] mb-4">Our Batch History</h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                The A/L 2015 batch of St. Michael's College — fondly known as the <strong className="text-[#8b0000]">Michaelites</strong> — sat for their Advanced Level examinations in 2015 as one of the most vibrant and talented batches in the school's history.
+                The A/L 2015 batch of St. Michael's College, fondly known as the <strong className="text-[#8b0000]">Michaelites</strong>, sat for their Advanced Level examinations in 2015 as one of the most vibrant and talented batches in the school's history.
               </p>
               <p>
                 Today, our batchmates are spread across Sri Lanka and over 12 countries worldwide, working in fields ranging from medicine, engineering, and law to business, arts, and public service.
