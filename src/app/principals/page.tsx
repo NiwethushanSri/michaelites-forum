@@ -67,7 +67,7 @@ export default function PrincipalsPage() {
           </blockquote>
 
           <p>
-            Through years of faithful service, our Principals nurtured young minds, strengthened character, upheld traditions, embraced innovation, and ensured that St. Michael's College remained a place where excellence was not merely expected — but achieved.
+            Through years of faithful service, our Principals nurtured young minds, strengthened character, upheld traditions, embraced innovation, and ensured that St. Michael's College remained a place where excellence was not merely expected, but achieved.
           </p>
 
           <p>
