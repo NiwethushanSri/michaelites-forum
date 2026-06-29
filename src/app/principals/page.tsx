@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const principals = [
-  // Early Leaders
   { name: "Mr. Joseph Abraham", period: "Head Master 1876 – 1924", role: "Head Master", quote: "Labour of love, unswervingly given, for nearly fifty years…", rip: false },
   { name: "Fr. Charles Royer S.J.", period: "Superior of Mission 1896 – 1903", role: "Superior", quote: "Behold the dreamer cometh", rip: false },
   { name: "Fr. Gaston Robichez S.J.", period: "Principal 1903 – 1916", role: "Principal", quote: "The heart that gave the impulse and direction to the dream", rip: false },
@@ -12,24 +11,17 @@ const principals = [
   { name: "Fr. Maurice Bourey S.J.", period: "Rector 1930–1932 · Principal 1927–1932", role: "Principal & Rector", quote: "Be so short a while he achieved long life", rip: false },
   { name: "Fr. Santiago Marian S.J.", period: "Principal 1933 – 1940", role: "Principal", quote: "My son, I am proud of you", rip: false },
   { name: "Fr. J. Aloysius Mary S.J.", period: "R.I.P.", role: "Principal", quote: "", rip: true },
-
-  // Mid-Century Leaders
   { name: "Fr. A. Emmanuel Crowther S.J.", period: "Rector 1938–1948 · Principal 1948–1957", role: "Rector & Principal", quote: "St. Michael's cross for the best", rip: false },
   { name: "Fr. Joseph V. Semmons S.J.", period: "Rector 1948 – 1955", role: "Rector", quote: "The witness that withstood the highest education wind", rip: false },
   { name: "Fr. Geo. H. Raymond S.J.", period: "Rector 1955–1959 · Principal 1957–1959", role: "Rector & Principal", quote: "Great things happened", rip: false },
   { name: "Fr. B. Harry Miller S.J.", period: "Rector 1959–1960 · Principal 1959–1960", role: "Rector & Principal", quote: "I worked, struggled, and squeezed for you", rip: false },
-  { name: "Fr. J.W. Lange S.J.", period: "Teacher & Superior of Jesuits", role: "Teacher & Superior", quote: "", rip: false },
   { name: "Fr. Vincent de Paul Gnanapragasam S.J.", period: "Principal 1961 – 1962", role: "Principal", quote: "The whisper that awakens memories of zest", rip: false },
   { name: "Fr. Paul N. Peiris S.J.", period: "Principal 1963 – 1976", role: "Principal", quote: "The mighty River that gave greater glory", rip: false },
   { name: "Fr. Frederick J. Leon S.J.", period: "Rector 1970", role: "Rector", quote: "Too late have I loved thee", rip: false },
   { name: "Mr. K.M.T. Somander B.Sc", period: "Performing Principal", role: "Performing Principal", quote: "The Good Samaritan", rip: false },
-
-  // Centennial Era
   { name: "Br. A.M. Thomas S.J.", period: "Principal – Centennial Year", role: "Principal", quote: "The spirit, that set the flame of centennial affairs", rip: false },
   { name: "Mr. T. Selvasargam", period: "Performing Principal – Centennial Year", role: "Performing Principal", quote: "Nothing but duty matters", rip: false },
   { name: "Mr. S. Emmanuel B.A.", period: "Performing Principal – Centennial Year", role: "Performing Principal", quote: "", rip: false },
-
-  // Others in the Board
   { name: "Fr. P.N. Peiris S.J.", period: "", role: "Principal", quote: "", rip: false },
   { name: "Fr. Alphonse Thiagarajah", period: "", role: "Principal", quote: "", rip: false },
   { name: "Fr. Peter Thurairatnam", period: "R.I.P.", role: "Principal", quote: "", rip: true },
@@ -37,14 +29,18 @@ const principals = [
   { name: "Fr. Santiago Marian S.J.", period: "R.I.P.", role: "Principal", quote: "", rip: true },
   { name: "Mgr. Jerome D'Su", period: "", role: "Superior", quote: "", rip: false },
   { name: "Fr. J.L. Daoud S.J.", period: "", role: "Principal", quote: "", rip: false },
-  { name: "Fr. Lessen A. Seller", period: "", role: "Teacher", quote: "", rip: false },
-  { name: "Fr. Francis M. Seller", period: "R.I.P.", role: "Teacher", quote: "", rip: true },
   { name: "Fr. Raymond Arulanandam", period: "", role: "Principal", quote: "", rip: false },
   { name: "Fr. A. Lameras", period: "R.I.P.", role: "Principal", quote: "", rip: true },
+];
+
+const teachers = [
+  { name: "Fr. J.W. Lange S.J.", period: "Teacher & Superior of Jesuits", role: "Teacher & Superior", quote: "", rip: false },
   { name: "Fr. Juvence Queste S.J.", period: "Teacher at St. Michael's", role: "Teacher", quote: "", rip: false },
   { name: "Fr. J.L. Clarkson S.J.", period: "Prefect of Discipline, 1953", role: "Prefect", quote: "", rip: false },
   { name: "Fr. W.H. Macnair S.J.", period: "Prefect of Discipline, 1953", role: "Prefect & Bursar", quote: "", rip: false },
   { name: "Fr. J.J. Heaney S.J.", period: "Teacher & Bursar", role: "Teacher & Bursar", quote: "", rip: false },
+  { name: "Fr. Lessen A. Seller", period: "", role: "Teacher", quote: "", rip: false },
+  { name: "Fr. Francis M. Seller", period: "R.I.P.", role: "Teacher", quote: "", rip: true },
   { name: "Sr. Celina F.M.M.", period: "", role: "Sister", quote: "", rip: false },
   { name: "Sr. M. Angelina F.M.M.", period: "", role: "Sister", quote: "", rip: false },
   { name: "Sr. M. Mangalam F.M.M.", period: "", role: "Sister", quote: "", rip: false },
@@ -132,47 +128,54 @@ export default function PrincipalsPage() {
               </thead>
               <tbody>
                 {principals.map((p, i) => (
-                  <tr
-                    key={`${p.name}-${i}`}
-                    className={`border-t border-gray-100 transition-colors ${
-                      p.rip
-                        ? "bg-gray-50 hover:bg-[#fdf8ec]"
-                        : i % 2 === 0
-                        ? "bg-white hover:bg-[#f0f2f8]"
-                        : "bg-[#f9fafc] hover:bg-[#f0f2f8]"
-                    }`}
-                  >
+                  <tr key={`p-${i}`} className={`border-t border-gray-100 transition-colors ${p.rip ? "bg-gray-50 hover:bg-[#fdf8ec]" : i % 2 === 0 ? "bg-white hover:bg-[#f0f2f8]" : "bg-[#f9fafc] hover:bg-[#f0f2f8]"}`}>
                     <td className="px-5 py-4 text-gray-400 font-medium">{i + 1}</td>
+                    <td className="px-5 py-4 font-bold text-[#0d1b3e]">{p.name}</td>
                     <td className="px-5 py-4">
-                      <span className={`font-bold ${p.rip ? "text-gray-600" : "text-[#0d1b3e]"}`}>
-                        {p.name}
-                      </span>
+                      <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${p.role.includes("Principal") ? "bg-[#8b0000]/10 text-[#8b0000]" : p.role.includes("Rector") ? "bg-[#0d1b3e]/10 text-[#0d1b3e]" : "bg-gray-100 text-gray-600"}`}>{p.role}</span>
                     </td>
-                    <td className="px-5 py-4">
-                      <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${
-                        p.role.includes("Principal")
-                          ? "bg-[#8b0000]/10 text-[#8b0000]"
-                          : p.role.includes("Rector")
-                          ? "bg-[#0d1b3e]/10 text-[#0d1b3e]"
-                          : p.role.includes("Sister")
-                          ? "bg-pink-100 text-pink-700"
-                          : "bg-gray-100 text-gray-600"
-                      }`}>
-                        {p.role}
-                      </span>
-                    </td>
-                    <td className="px-5 py-4">
-                      <span className="text-[#c9a227] font-semibold text-xs">
-                        {p.period || "—"}
-                      </span>
-                    </td>
-                    <td className="px-5 py-4 hidden md:table-cell text-gray-400 italic text-xs max-w-xs">
-                      {p.quote ? `"${p.quote}"` : ""}
-                    </td>
+                    <td className="px-5 py-4 text-[#c9a227] font-semibold text-xs">{p.period || "—"}</td>
+                    <td className="px-5 py-4 hidden md:table-cell text-gray-400 italic text-xs">{p.quote ? `"${p.quote}"` : ""}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Teachers & Staff Table */}
+          <div className="mt-16">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-1 flex-1 bg-gradient-to-r from-[#c9a227] to-transparent rounded-full" />
+              <h3 className="text-2xl md:text-3xl font-black text-[#0d1b3e] whitespace-nowrap">
+                Teachers <span className="text-[#c9a227]">&amp; Staff</span>
+              </h3>
+              <div className="h-1 flex-1 bg-gradient-to-l from-[#c9a227] to-transparent rounded-full" />
+            </div>
+            <p className="text-gray-500 text-center mb-8">Dedicated educators who served alongside the Principals of St. Michael's College.</p>
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-[#c9a227] text-[#0d1b3e]">
+                    <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider w-10">#</th>
+                    <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider">Name</th>
+                    <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider">Role</th>
+                    <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider">Period / Service</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {teachers.map((t, i) => (
+                    <tr key={`t-${i}`} className={`border-t border-gray-100 transition-colors ${t.rip ? "bg-gray-50 hover:bg-[#fdf8ec]" : i % 2 === 0 ? "bg-white hover:bg-[#f0f2f8]" : "bg-[#f9fafc] hover:bg-[#f0f2f8]"}`}>
+                      <td className="px-5 py-4 text-gray-400 font-medium">{i + 1}</td>
+                      <td className="px-5 py-4 font-bold text-[#0d1b3e]">{t.name}</td>
+                      <td className="px-5 py-4">
+                        <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${t.role.includes("Sister") ? "bg-pink-100 text-pink-700" : t.role.includes("Prefect") ? "bg-purple-100 text-purple-700" : "bg-amber-100 text-amber-700"}`}>{t.role}</span>
+                      </td>
+                      <td className="px-5 py-4 text-[#c9a227] font-semibold text-xs">{t.period || "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
