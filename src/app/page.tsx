@@ -105,6 +105,67 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Reunion Highlight */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-[#8b0000]/10 text-[#8b0000] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+              Batch Memories
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-[#0d1b3e] mb-3">
+              Reunion <span className="text-[#8b0000]">2020</span>
+            </h2>
+            <p className="text-gray-500 text-lg">Class A · January 02, 2020 · St. Michael's College Michaelites</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            {/* Photo */}
+            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-[#0d1b3e]/10">
+              <Image
+                src="/reunion-2020.jpg"
+                alt="Michaelites A/L 2015 Class A – Reunion 2020, January 02"
+                width={900}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            {/* Details */}
+            <div className="flex flex-col gap-6">
+              <div className="bg-[#f0f2f8] rounded-2xl p-6">
+                <h3 className="text-xl font-black text-[#0d1b3e] mb-4">Event Details</h3>
+                <div className="space-y-3">
+                  {[
+                    { label: "Event", value: "Michaelites A/L 2015 Reunion" },
+                    { label: "Class", value: "Class A — 2015 Batch" },
+                    { label: "Date", value: "January 02, 2020" },
+                    { label: "School", value: "St. Michael's College, Batticaloa" },
+                  ].map((item) => (
+                    <div key={item.label} className="flex gap-3">
+                      <span className="text-[#8b0000] font-bold text-sm w-20 shrink-0">{item.label}</span>
+                      <span className="text-gray-700 text-sm">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="text-gray-500 leading-relaxed">
+                Our beloved Class A batch gathered together for the first reunion since leaving school — reconnecting, sharing memories, and celebrating the bond that keeps us united across years and miles.
+              </p>
+
+              <div className="flex gap-4">
+                <Link href="/gallery" className="bg-[#0d1b3e] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#1a2d5a] transition-all text-sm">
+                  View Gallery
+                </Link>
+                <Link href="/events" className="border-2 border-[#0d1b3e] text-[#0d1b3e] font-bold px-6 py-3 rounded-xl hover:bg-[#0d1b3e] hover:text-white transition-all text-sm">
+                  All Events
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Upcoming Events */}
       <section className="bg-[#f0f2f8] py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
