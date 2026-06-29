@@ -122,7 +122,7 @@ export default function PrincipalsPage() {
 
           <blockquote className="border-l-4 border-[#8b0000] pl-6 py-2 bg-red-50 rounded-r-xl">
             <p className="italic text-[#8b0000] font-medium text-xl">
-              "Leadership is measured not merely by years served, but by lives transformed. The influence of a great Principal extends beyond examinations and classrooms — it shapes communities, inspires generations, and leaves a legacy that time can never erase."
+              "Leadership is measured not merely by years served, but by lives transformed. The influence of a great Principal extends beyond examinations and classrooms, it shapes communities, inspires generations, and leaves a legacy that time can never erase."
             </p>
           </blockquote>
 
