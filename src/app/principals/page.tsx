@@ -1,4 +1,4 @@
-import { BookOpen, Star, Heart, Award, Clock, Flame, MessageSquare, Image as ImageIcon, User } from "lucide-react";
+import { BookOpen, Star, Heart, Award, Clock, Flame, MessageSquare, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -114,10 +114,10 @@ export default function PrincipalsPage() {
         </div>
       </section>
 
-      {/* Individual Principal Cards Grid */}
+      {/* Principals Table */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-14">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
             <span className="inline-block bg-[#8b0000]/10 text-[#8b0000] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
               Our Distinguished Leaders
             </span>
@@ -129,55 +129,63 @@ export default function PrincipalsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-            {principals.map((p, i) => (
-              <div
-                key={`${p.name}-${i}`}
-                className={`bg-white rounded-2xl overflow-hidden shadow-sm border transition-all hover:shadow-lg group ${
-                  p.rip ? "border-[#c9a227]/40 hover:border-[#c9a227]" : "border-gray-100 hover:border-[#8b0000]/30"
-                }`}
-              >
-                {/* Photo placeholder */}
-                <div className={`h-36 flex items-center justify-center relative ${
-                  p.rip
-                    ? "bg-gradient-to-br from-gray-800 to-gray-900"
-                    : "bg-gradient-to-br from-[#0d1b3e]/8 to-[#8b0000]/8 group-hover:from-[#0d1b3e]/15 group-hover:to-[#8b0000]/15"
-                } transition-all`}>
-                  {p.rip && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                      <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center">
-                        <User className="w-7 h-7 text-[#c9a227]" strokeWidth={1} />
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-[#0d1b3e] text-white">
+                  <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider w-10">#</th>
+                  <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider">Name</th>
+                  <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider">Role</th>
+                  <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider">Period / Years</th>
+                  <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider hidden md:table-cell">Quote</th>
+                </tr>
+              </thead>
+              <tbody>
+                {principals.map((p, i) => (
+                  <tr
+                    key={`${p.name}-${i}`}
+                    className={`border-t border-gray-100 transition-colors ${
+                      p.rip
+                        ? "bg-gray-50 hover:bg-[#fdf8ec]"
+                        : i % 2 === 0
+                        ? "bg-white hover:bg-[#f0f2f8]"
+                        : "bg-[#f9fafc] hover:bg-[#f0f2f8]"
+                    }`}
+                  >
+                    <td className="px-5 py-4 text-gray-400 font-medium">{i + 1}</td>
+                    <td className="px-5 py-4">
+                      <div className="flex items-center gap-2">
+                        {p.rip && <span className="text-base">🕯️</span>}
+                        <span className={`font-bold ${p.rip ? "text-gray-600" : "text-[#0d1b3e]"}`}>
+                          {p.name}
+                        </span>
                       </div>
-                      <span className="text-[#c9a227] text-xs font-bold tracking-widest">🕯️ R.I.P.</span>
-                    </div>
-                  )}
-                  {!p.rip && (
-                    <div className="flex flex-col items-center justify-center gap-2">
-                      <div className="w-14 h-14 rounded-full bg-[#0d1b3e]/10 flex items-center justify-center">
-                        <User className="w-7 h-7 text-[#0d1b3e]/40" strokeWidth={1} />
-                      </div>
-                      <span className="text-[#0d1b3e]/30 text-xs">Photo</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Info */}
-                <div className="p-4">
-                  <h3 className={`font-bold text-sm leading-tight mb-1 ${p.rip ? "text-gray-700" : "text-[#0d1b3e] group-hover:text-[#8b0000]"} transition-colors`}>
-                    {p.name}
-                  </h3>
-                  {p.period && (
-                    <p className="text-[#c9a227] text-xs font-semibold mb-1">{p.period}</p>
-                  )}
-                  <p className="text-gray-400 text-xs">{p.role}</p>
-                  {p.quote && (
-                    <p className="text-gray-500 text-xs italic mt-2 leading-relaxed border-t border-gray-100 pt-2">
-                      "{p.quote}"
-                    </p>
-                  )}
-                </div>
-              </div>
-            ))}
+                    </td>
+                    <td className="px-5 py-4">
+                      <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${
+                        p.role.includes("Principal")
+                          ? "bg-[#8b0000]/10 text-[#8b0000]"
+                          : p.role.includes("Rector")
+                          ? "bg-[#0d1b3e]/10 text-[#0d1b3e]"
+                          : p.role.includes("Sister")
+                          ? "bg-pink-100 text-pink-700"
+                          : "bg-gray-100 text-gray-600"
+                      }`}>
+                        {p.role}
+                      </span>
+                    </td>
+                    <td className="px-5 py-4">
+                      <span className="text-[#c9a227] font-semibold text-xs">
+                        {p.period || "—"}
+                      </span>
+                    </td>
+                    <td className="px-5 py-4 hidden md:table-cell text-gray-400 italic text-xs max-w-xs">
+                      {p.quote ? `"${p.quote}"` : ""}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
