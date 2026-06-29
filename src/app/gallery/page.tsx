@@ -3,13 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 const albums = [
-  { title: "Reunion 2020 – Class A", count: 1, tag: "Events", cover: "/reunion-2020.jpg" },
-  { title: "School Days 2013–2015", count: 48, tag: "Memories", cover: null },
-  { title: "A/L Study Days", count: 22, tag: "Memories", cover: null },
-  { title: "Reunion 2022", count: 120, tag: "Events", cover: null },
-  { title: "Cricket Match 2023", count: 67, tag: "Events", cover: null },
-  { title: "Donation Drive 2024", count: 34, tag: "Charity", cover: null },
-  { title: "Reunion 2025", count: 95, tag: "Events", cover: null },
+  { slug: "reunion-2020", title: "Reunion 2020 – Class A", count: 1, tag: "Events", cover: "/reunion-2020.jpg" },
+  { slug: "school-days", title: "School Days 2013–2015", count: 48, tag: "Memories", cover: null },
+  { slug: "al-study-days", title: "A/L Study Days", count: 22, tag: "Memories", cover: null },
+  { slug: "reunion-2022", title: "Reunion 2022", count: 120, tag: "Events", cover: null },
+  { slug: "cricket-2023", title: "Cricket Match 2023", count: 67, tag: "Events", cover: null },
+  { slug: "donation-2024", title: "Donation Drive 2024", count: 34, tag: "Charity", cover: null },
+  { slug: "reunion-2025", title: "Reunion 2025", count: 95, tag: "Events", cover: null },
 ];
 
 const tagColors: Record<string, string> = {
@@ -81,9 +81,9 @@ export default function GalleryPage() {
                 <p className="text-gray-400 text-sm mt-1 flex items-center gap-1">
                   <ImageIcon className="w-3.5 h-3.5" strokeWidth={1.5} /> {a.count} photos
                 </p>
-                <button className="mt-4 w-full text-sm font-semibold text-[#8b0000] border border-[#8b0000]/20 py-2 rounded-lg hover:bg-[#8b0000] hover:text-white transition-all">
+                <Link href={`/gallery/${a.slug}`} className="mt-4 block w-full text-center text-sm font-semibold text-[#8b0000] border border-[#8b0000]/20 py-2 rounded-lg hover:bg-[#8b0000] hover:text-white transition-all">
                   View Album
-                </button>
+                </Link>
               </div>
             </div>
           ))}
