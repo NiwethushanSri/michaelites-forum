@@ -246,22 +246,6 @@ export default function PrincipalsPage() {
         </div>
       </section>
 
-      {/* Candle of Remembrance */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0d1b3e] text-white text-center">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-5xl mb-6">🕯️</div>
-          <h2 className="text-3xl md:text-4xl font-black mb-4">
-            Candle of <span className="text-[#c9a227]">Remembrance</span>
-          </h2>
-          <p className="text-gray-300 text-lg italic mb-8">
-            "A Principal plants seeds of knowledge, nurtures character with wisdom, leads with courage, and leaves behind a legacy that continues to inspire long after their time has passed."
-          </p>
-          <div className="w-20 h-1 bg-[#c9a227] mx-auto rounded-full mb-10" />
-          <p className="text-gray-400 text-base leading-relaxed">
-            May Almighty God grant eternal peace to those who have departed and bless all who have served our beloved St. Michael's College with dedication and distinction. Their memory shall forever remain in the hearts of Michaelites around the world.
-          </p>
-        </div>
-      </section>
 
       {/* Closing quote & CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#8b0000] to-[#a31515] text-white text-center">
