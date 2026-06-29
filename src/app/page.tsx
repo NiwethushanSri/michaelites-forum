@@ -142,6 +142,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Aathallers Vlog Promo */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0d1b3e]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-[#c9a227]/20 text-[#c9a227] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+              Michaelites on YouTube
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-3">
+              Aathallers <span className="text-[#c9a227]">Vlog</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-xl mx-auto">
+              Our 2015 batch friends doing what they do best — entertainment, fun challenges, travel &amp; adventure.
+            </p>
+          </div>
+
+          {/* Video Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {[
+              { id: "BUWgp61glYU", title: "Aathallers Vlog – Episode 1" },
+              { id: "dacD2_Lq4ps", title: "Aathallers Vlog – Episode 2" },
+              { id: "knhql0vJT-M", title: "Aathallers Vlog – Episode 3" },
+            ].map((video) => (
+              <div key={video.id} className="rounded-2xl overflow-hidden shadow-2xl border border-[#c9a227]/20 bg-black aspect-video">
+                <iframe
+                  className="w-full h-full"
+                  src={`https://www.youtube.com/embed/${video.id}`}
+                  title={video.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://www.youtube.com/@AathallersvlogOfficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-7 py-3.5 rounded-xl transition-all text-base shadow-lg"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+              Subscribe on YouTube
+            </a>
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-[#1877f2] hover:bg-[#166fe5] text-white font-bold px-7 py-3.5 rounded-xl transition-all text-base shadow-lg"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+              Follow on Facebook
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-gradient-to-r from-[#8b0000] to-[#a31515] text-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
