@@ -201,6 +201,24 @@ export default function Home() {
                   />
                 </a>
 
+                {/* ── Forge9x ── */}
+                <a
+                  href="https://forge9x.co.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-shadow"
+                  style={{ height: 160 }}
+                >
+                  <Image
+                    src="/banners/forge9x.jpg"
+                    alt="Forge9x – Web, AI & Mobile Development"
+                    width={480}
+                    height={160}
+                    className="h-full w-auto object-contain"
+                    style={{ maxHeight: 160 }}
+                  />
+                </a>
+
                 {/* ── Placeholder slot ── */}
                 <div
                   className="flex-shrink-0 rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50 flex flex-col items-center justify-center gap-2 text-center"
