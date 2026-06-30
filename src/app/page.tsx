@@ -142,6 +142,81 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Batch Business Promotions – Scrolling Banner */}
+      <section className="py-14 px-4 sm:px-6 lg:px-8 bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto mb-8 text-center">
+          <span className="inline-block bg-[#8b0000]/10 text-[#8b0000] text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">
+            Our Batch Businesses
+          </span>
+          <h2 className="text-2xl md:text-3xl font-black text-[#0d1b3e]">
+            Michaelites <span className="text-[#c9a227]">Entrepreneurs</span>
+          </h2>
+          <p className="text-gray-500 text-sm mt-2">Support your batchmates — click a banner to learn more</p>
+        </div>
+
+        {/* Scrolling strip */}
+        <div className="overflow-hidden relative">
+          {/* Fade edges */}
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10" />
+
+          <div className="flex animate-marquee" style={{ width: "max-content" }}>
+            {/* Duplicate banners so the scroll is seamless */}
+            {[...Array(2)].map((_, dupIdx) => (
+              <div key={dupIdx} className="flex gap-6 pr-6">
+
+                {/* ── Doctor Siddha ── */}
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-shadow"
+                  style={{ height: 160 }}
+                >
+                  <Image
+                    src="/banners/doctor-siddha.jpg"
+                    alt="Doctor Siddha – Amukkara Chooranam"
+                    width={480}
+                    height={160}
+                    className="h-full w-auto object-contain"
+                    style={{ maxHeight: 160 }}
+                  />
+                </a>
+
+                {/* ── Oothal Decoration ── */}
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-shadow"
+                  style={{ height: 160 }}
+                >
+                  <Image
+                    src="/banners/oothal-decoration.jpg"
+                    alt="Oothal Decoration – Event Planner & Decoration"
+                    width={480}
+                    height={160}
+                    className="h-full w-auto object-contain"
+                    style={{ maxHeight: 160 }}
+                  />
+                </a>
+
+                {/* ── Placeholder slot ── */}
+                <div
+                  className="flex-shrink-0 rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50 flex flex-col items-center justify-center gap-2 text-center"
+                  style={{ width: 320, height: 160 }}
+                >
+                  <Globe className="w-7 h-7 text-gray-300" strokeWidth={1.5} />
+                  <p className="text-xs text-gray-400 font-semibold">Your Business Here</p>
+                  <p className="text-xs text-gray-400">Contact the committee to advertise</p>
+                </div>
+
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Aathallers Vlog Promo */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#0d1b3e]">
         <div className="max-w-7xl mx-auto">
