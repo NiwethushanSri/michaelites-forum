@@ -117,14 +117,14 @@ export default function PrincipalsPage() {
           </div>
 
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 overflow-x-auto">
-            <table className="w-full text-sm min-w-[600px]">
+            <table className="w-full text-sm min-w-[800px]">
               <thead>
                 <tr className="bg-[#0d1b3e] text-white">
                   <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider w-10">#</th>
                   <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider">Name</th>
                   <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider">Role</th>
                   <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider">Period / Years</th>
-                  <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider hidden md:table-cell">Quote</th>
+                  <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider">Quote</th>
                 </tr>
               </thead>
               <tbody>
@@ -136,7 +136,7 @@ export default function PrincipalsPage() {
                       <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full ${p.role.includes("Principal") ? "bg-[#8b0000]/10 text-[#8b0000]" : p.role.includes("Rector") ? "bg-[#0d1b3e]/10 text-[#0d1b3e]" : p.role.includes("Sister") ? "bg-pink-100 text-pink-700" : p.role.includes("Prefect") ? "bg-purple-100 text-purple-700" : "bg-amber-100 text-amber-700"}`}>{p.role}</span>
                     </td>
                     <td className="px-5 py-4 text-[#c9a227] font-semibold text-xs">{p.period || "—"}</td>
-                    <td className="px-5 py-4 hidden md:table-cell text-gray-400 italic text-xs">{p.quote ? `"${p.quote}"` : ""}</td>
+                    <td className="px-5 py-4 text-gray-400 italic text-xs">{p.quote ? `"${p.quote}"` : ""}</td>
                   </tr>
                 ))}
               </tbody>
