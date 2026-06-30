@@ -71,8 +71,9 @@ export function generateStaticParams() {
   return Object.keys(albumData).map((slug) => ({ slug }));
 }
 
-export default function AlbumPage({ params }: { params: { slug: string } }) {
-  const album = albumData[params.slug];
+export default async function AlbumPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const album = albumData[slug];
   if (!album) notFound();
 
   return (

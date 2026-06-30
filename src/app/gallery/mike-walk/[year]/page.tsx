@@ -24,8 +24,9 @@ export function generateStaticParams() {
   return validYears.map((year) => ({ year: String(year) }));
 }
 
-export default function MikeWalkYearPage({ params }: { params: { year: string } }) {
-  const year = Number(params.year);
+export default async function MikeWalkYearPage({ params }: { params: Promise<{ year: string }> }) {
+  const { year: yearStr } = await params;
+  const year = Number(yearStr);
   if (!validYears.includes(year)) notFound();
 
   const photos = yearPhotos[year] ?? [];

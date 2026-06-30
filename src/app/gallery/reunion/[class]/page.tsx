@@ -18,8 +18,9 @@ export function generateStaticParams() {
   return Object.keys(classData).map((c) => ({ class: c }));
 }
 
-export default function ReunionClassPage({ params }: { params: { class: string } }) {
-  const data = classData[params.class];
+export default async function ReunionClassPage({ params }: { params: Promise<{ class: string }> }) {
+  const { class: className } = await params;
+  const data = classData[className];
   if (!data) notFound();
 
   return (
