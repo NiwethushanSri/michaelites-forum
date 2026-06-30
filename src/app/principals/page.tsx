@@ -116,8 +116,8 @@ export default function PrincipalsPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-            <table className="w-full text-sm">
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 overflow-x-auto">
+            <table className="w-full text-sm min-w-[600px]">
               <thead>
                 <tr className="bg-[#0d1b3e] text-white">
                   <th className="px-5 py-4 text-left font-bold text-xs uppercase tracking-wider w-10">#</th>
