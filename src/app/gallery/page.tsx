@@ -7,10 +7,8 @@ const albums = [
   { slug: "mike-walk", title: "Mike Walk", count: 10, tag: "Memories", cover: null },
   { slug: "school-days", title: "School Days 2013–2015", count: 48, tag: "Memories", cover: null },
   { slug: "al-study-days", title: "A/L Study Days", count: 22, tag: "Memories", cover: null },
-  { slug: "reunion-2022", title: "Reunion 2022", count: 120, tag: "Events", cover: null },
   { slug: "cricket-2023", title: "Cricket Match 2023", count: 67, tag: "Events", cover: null },
   { slug: "donation-2024", title: "Donation Drive 2024", count: 34, tag: "Charity", cover: null },
-  { slug: "reunion-2025", title: "Reunion 2025", count: 95, tag: "Events", cover: null },
 ];
 
 const tagColors: Record<string, string> = {
