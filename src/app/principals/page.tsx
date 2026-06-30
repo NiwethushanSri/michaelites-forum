@@ -87,15 +87,19 @@ export default function PrincipalsPage() {
       {/* Gold divider */}
       <div className="h-1.5 bg-gradient-to-r from-[#8b0000] via-[#c9a227] to-[#8b0000]" />
 
-      {/* Full Composite Board — uncomment once principals-board.jpg is saved to /public */}
-      {/* <section className="py-14 px-4 sm:px-6 lg:px-8 bg-[#f9f6ef]">
+      {/* Full Composite Board */}
+      <section className="py-14 px-4 sm:px-6 lg:px-8 bg-[#f9f6ef]">
         <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-black text-[#0d1b3e] mb-2">The Principals Board</h2>
+            <p className="text-gray-500">St. Michael's College National School, Batticaloa</p>
+          </div>
           <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-[#c9a227]/40">
-            <Image src="/principals-board.jpg" alt="Past Principals Board" width={1400} height={700} className="w-full h-auto object-cover" />
+            <Image src="/principals-board.jpg" alt="St. Michael's College Past Principals Board" width={1400} height={800} className="w-full h-auto object-cover" />
           </div>
           <p className="text-center text-xs text-gray-400 mt-3 italic">All old images reconstructed by Niwethushan.</p>
         </div>
-      </section> */}
+      </section>
 
       {/* Principals Table */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
